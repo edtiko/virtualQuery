@@ -1,21 +1,31 @@
 
-
+import ddf.minim.*;
+ 
+Minim minim;
+AudioPlayer song1, song2;
 PImage img1, img2, img, nino1, nino2, nino3;
 int x= mouseX;
  int y= mouseY;
 void setup(){
 
-size(600, 400);
+size(800, 600);
 
 img1 = loadImage("welcome.jpg"); 
-img1.resize(600, 400);
+img1.resize(800, 600);
 img2 = loadImage("fondo.png");
-img2.resize(600, 400);
+img2.resize(800, 600);
 img = img1;
 background(img);
 textSize(32);
 fill(0, 102, 153);
 text(".::ENTRAR::.", 200, 370);
+ minim = new Minim(this);
+ 
+  // this loads mysong.wav from the data folder
+  song1 = minim.loadFile("naturaleza.mp3",512);
+  song2 = minim.loadFile("ninos.mp3",512);
+
+
 }
 
 void draw(){  
@@ -32,9 +42,11 @@ nino3 = loadImage("nino3.png");
 nino1.resize(50,50);
 nino2.resize(50,50);
 nino3.resize(50,50);
-image(nino1, 200, 210);
-image(nino2, 270, 210);
-image(nino3, 350, 210);
+image(nino1, 300, 310);
+image(nino2, 400, 310);
+image(nino3, 500, 310);
+  song1.play();
+  song2.play();
 }
   println(mouseX + " : " + mouseY);
 }
