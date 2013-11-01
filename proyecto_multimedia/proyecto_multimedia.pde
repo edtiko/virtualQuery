@@ -3,7 +3,7 @@ import ddf.minim.*;
  
 Minim minim;
 AudioPlayer song1, song2;
-PImage img1, img2, img, nino1, nino2, nino3;
+PImage img1, img2,img3, img4, img5, img6, img7, img8, img9, img, nino1, nino2, nino3;
 
 MovingCircle myCircle ;
 MovingCircle myCircle2 ;
@@ -20,15 +20,29 @@ size(800, 600);
    myCircle2= new MovingCircle(50,50,10);
    myCircle3= new MovingCircle(50,50,10);
    stop=true;
-img1 = loadImage("welcome.jpg"); 
+img1 = loadImage("Portada.png"); 
 img1.resize(800, 600);
-img2 = loadImage("fondo.png");
+img2 = loadImage("D1.png"); 
 img2.resize(800, 600);
+img3 = loadImage("D2.png"); 
+img3.resize(800, 600);
+img4 = loadImage("D3.png"); 
+img4.resize(800, 600);
+img5 = loadImage("D4.png"); 
+img5.resize(800, 600);
+img6 = loadImage("D5.png"); 
+img6.resize(800, 600);
+img7 = loadImage("D6.png"); 
+img7.resize(800, 600);
+img8 = loadImage("D7.png");
+img8.resize(800, 600);
+img9 = loadImage("fondo.png");
+img9.resize(800, 600);
 img = img1;
 background(img);
 textSize(32);
 fill(0, 102, 153);
-text(".::ENTRAR::.", 200, 370);
+text(".::ENTRAR::.", 300, 570);
  minim = new Minim(this);
  
   // this loads mysong.wav from the data folder
@@ -44,7 +58,7 @@ if(mousePressed==true){
  //background(img); 
 }
 
-if(img==img2){
+if(img==img9){
    background(img); 
 // nino1 = loadImage("nino.png");
 //nino2 = loadImage("nino2.png");
@@ -121,17 +135,40 @@ myCircle3.update();
 
 void mousePressed(){
   
-  if(img==img2){
+  if(img==img9){
     stop=false;
 myCircle.x=(width/2);
 myCircle.y=150;
 myCircle3.x=(width/2)+30;
 myCircle3.y=150;
   }
-  else{
-  img=img2;
- background(img);
+  else if(img==img8){
+    img=img9;
   }
+  else if(img==img7){
+    img=img8;
+  }
+  else if(img==img6){
+    img=img7;
+  }
+  else if(img==img5){
+    img=img6;
+  }
+  else if(img==img4){
+    img=img5;
+  }
+  else if(img==img3){
+    img=img4;
+  }
+  else if(img==img2){
+    img=img3;
+  }
+  else if(img==img1){
+    img=img2;
+  }
+  
+ background(img);
+  
 
 }
 
